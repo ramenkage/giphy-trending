@@ -21,6 +21,9 @@ module.exports = function (environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+
+    // Get GIPHY API key from .env file via ember-cli-dotenv
+    GIPHY_KEY: process.env.GIPHY_KEY,
   };
 
   if (environment === 'development') {
