@@ -1,0 +1,10 @@
+{{page-title "Index"}}
+
+<ol>
+{{#each @model as |gif|}}
+  <li>
+    <img src="{{gif.images.fixed_height.url}}" />
+    {{gif.id}} - {{gif.title}}
+  </li>
+{{/each}}
+</ol>
