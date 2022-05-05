@@ -1,10 +1,28 @@
-{{page-title "Index"}}
+{{page-title "Some Cool GIFs"}}
+<header>
+  <h1 class="page-title">Some Cool GIFs</h1>
+  {{!-- TODO: Set inital state based on prefers-reduced-motion media query --}}
+  <div class="settings">
+    <Input
+      id="animate-checkbox"
+      @type="checkbox"
+      @checked={{this.animate}}
+    />
+    <label for="animate-checkbox">Play animations?</label>
+  </div>
+</header>
 
-<ol>
+<main class="gif-grid">
 {{#each @model as |gif|}}
-  <li>
-    <img src="{{gif.images.fixed_height.url}}" />
-    {{gif.id}} - {{gif.title}}
-  </li>
+  <article class="gif-card">
+    <a class="gif-card__content" href="{{gif.url}}" target="_blank" rel="noopener noreferrer">
+      {{!-- TODO: Responsive image source --}}
+      <img class="gif-card__image" src="{{if this.animate gif.images.fixed_width.url gif.images.fixed_width_still.url}}" alt="{{gif.title}}" />
+      <div class="gif-card__info">
+        <h2>{{gif.title}}</h2>
+        <p class="gif-id">{{gif.id}}</p>
+      </div>
+    </a>
+  </article>
 {{/each}}
-</ol>
+</main>

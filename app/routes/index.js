@@ -5,6 +5,6 @@ export default class IndexRoute extends Route {
   @service store;
 
   async model() {
-    return this.store.query('gif', { rating: 'pg' });
+    return this.store.query('gif', { rating: 'g' });
   }
 }

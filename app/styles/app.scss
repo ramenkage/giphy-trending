@@ -1,0 +1,94 @@
+$column-min-width: 450px;
+$column-max-width: 550px;
+$grid-spacing: 1rem;
+
+body {
+  background: linear-gradient(-45deg,#fda000 0,#d3208b 50%,#3d5cea 100%) center / 100vw 100vh fixed;
+  font-family: sans-serif;
+}
+
+header {
+  position: sticky;
+  inset-inline: 0;
+  inset-block-start: 0;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-items: stretch;
+  align-items: center;
+
+  padding: .5em 1em;
+  background: rgb(255 255 255 / .9);
+  box-shadow: 0 2px 8px 0 rgb(0 10 56 / .12);
+}
+
+.page-title {
+  flex-grow: 1;
+
+  font-size: 1em;
+  font-weight: 800;
+}
+
+.gif-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: stretch;
+  align-items: center;
+  margin: $grid-spacing;
+  gap: $grid-spacing;
+
+  @media (min-width: $column-min-width) {
+    grid-template-columns: repeat(auto-fit, minmax(calc($column-min-width - 2 * $grid-spacing), auto));
+    justify-items: center;
+  }
+}
+
+.gif-card {
+  max-width: $column-max-width;
+  padding: 8px;
+  border-radius: 15px;
+  border: 1px solid rgb(229 230 235 / .5);
+  background: rgb(255 255 255 / .2);
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 7px;
+    overflow: clip;
+    border: 1px solid rgb(255 255 255 / .5);
+    background: rgb(255 255 255 / .7);
+    box-shadow: 0 9px 38px 0 rgb(0 0 0 / .12);
+
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+  &__image {
+    flex: none;
+  }
+
+  &__info {
+    flex: auto;
+    padding: 1rem;
+    /* Fix box overflowing parent with long words, e.g. GIF IDs */
+    min-width: 0;
+    overflow-wrap: break-word;
+  }
+
+  @media (min-width: $column-min-width) {
+    &__content {
+      flex-direction: row;
+    }
+    &__image {
+      align-self: center;
+    }
+    &__info {
+      align-self: stretch;
+    }
+  }
+}
+
+h2 {
+  font-size: 1em;
+}
