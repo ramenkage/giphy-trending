@@ -16,8 +16,35 @@
 {{#each @model as |gif|}}
   <article class="gif-card">
     <a class="gif-card__content" href="{{gif.url}}" target="_blank" rel="noopener noreferrer">
-      {{!-- TODO: Responsive image source --}}
-      <img class="gif-card__image" src="{{if this.animate gif.images.fixed_width.url gif.images.fixed_width_still.url}}" alt="{{gif.title}}" />
+      {{#if this.animate}}
+        <img class="gif-card__image" style={{html-safe (concat "aspect-ratio: " gif.images.original.width " / " gif.images.original.height ";")}}
+          srcset="
+            {{gif.images.fixed_width.url}} {{gif.images.fixed_width.width}}w,
+            {{gif.images.fixed_height.url}} {{gif.images.fixed_height.width}}w,
+            {{gif.images.original.url}} {{gif.images.original.width}}w
+          "
+          sizes="
+            (min-width: 450px) 200px,
+            calc(100vw - 2rem - 20px)
+          "
+          alt="{{gif.title}}"
+          loading="lazy"
+        >
+      {{else}}
+        <img class="gif-card__image" style={{html-safe (concat "aspect-ratio: " gif.images.original.width " / " gif.images.original.height ";")}}
+          srcset="
+            {{gif.images.fixed_width_still.url}} {{gif.images.fixed_width.width}}w,
+            {{gif.images.fixed_height_still.url}} {{gif.images.fixed_height.width}}w,
+            {{gif.images.original_still.url}} {{gif.images.original.width}}w
+          "
+          sizes="
+            (min-width: 450px) 200px,
+            calc(100vw - 2rem - 20px)
+          "
+          alt="{{gif.title}}"
+          loading="lazy"
+        >
+      {{/if}}
       <div class="gif-card__info">
         <h2>{{gif.title}}</h2>
         <p class="gif-id">{{gif.id}}</p>
