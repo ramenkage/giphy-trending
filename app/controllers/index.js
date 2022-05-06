@@ -7,8 +7,16 @@ export default class IndexController extends Controller {
   @service media;
   @tracked animate = !this.media.isReducedMotion;
 
+  queryParams = ['rating'];
+  @tracked rating = 'g';
+
   @action
   toggleAnimate() {
     this.animate = !this.animate;
+  }
+
+  @action
+  setRating(rating) {
+    this.rating = rating;
   }
 }

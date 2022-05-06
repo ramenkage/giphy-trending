@@ -3,10 +3,20 @@
   <h1 class="page-title">Some Cool GIFs</h1>
   <div class="settings">
     <fieldset class="radio-toggle">
-      <input type="radio" id="animate-pause" name="animate" value="false" checked={{if this.animate false true}} {{on "click" this.toggleAnimate}}>
+      <input type="radio" id="animate-pause" name="animate" value="false" checked={{not this.animate}} {{on "click" this.toggleAnimate}}>
       <label for="animate-pause"><span class="material-icons">pause</span></label>
       <input type="radio" id="animate-play" name="animate" value="true" checked={{this.animate}} {{on "click" this.toggleAnimate}}>
       <label for="animate-play"><span class="material-icons">play_arrow</span></label>
+    </fieldset>
+    <fieldset class="radio-toggle">
+      <input type="radio" id="rating-g" name="rating" value="g" checked={{eq this.rating "g"}} {{on "click" (fn this.setRating "g")}}>
+      <label for="rating-g">G</label>
+      <input type="radio" id="rating-pg" name="rating" value="pg" checked={{eq this.rating "pg"}} {{on "click" (fn this.setRating "pg")}}>
+      <label for="rating-pg">PG</label>
+      <input type="radio" id="rating-pg-13" name="rating" value="pg-13" checked={{eq this.rating "pg-13"}} {{on "click" (fn this.setRating "pg-13")}}>
+      <label for="rating-pg-13">PG-13</label>
+      <input type="radio" id="rating-r" name="rating" value="r" checked={{eq this.rating "r"}} {{on "click" (fn this.setRating "r")}}>
+      <label for="rating-r">R</label>
     </fieldset>
   </div>
 </header>
