@@ -2,6 +2,10 @@
 
 This Ember app displays the top 50 trending GIFs from GIPHY. It was designed with a nod to the [Hypercontext.com](https://hypercontext.com/) design philosophy for... some reason.
 
+## Demo
+
+This app is up and running at [ramenkage-giphy-trending.netlify.app](https://ramenkage-giphy-trending.netlify.app/)
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
