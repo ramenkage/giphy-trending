@@ -1,4 +1,5 @@
 import JSONAPISerializer from '@ember-data/serializer/json-api';
+import { underscore } from '@ember/string';
 
 export default class ApplicationSerializer extends JSONAPISerializer {
   normalize(typeClass, hash) {
@@ -14,5 +15,9 @@ export default class ApplicationSerializer extends JSONAPISerializer {
     });
 
     return super.normalize(...arguments);
+  }
+
+  keyForAttribute(attr) {
+    return underscore(attr);
   }
 }

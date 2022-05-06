@@ -118,6 +118,17 @@ header {
     /* Fix box overflowing parent with long words, e.g. GIF IDs */
     min-width: 0;
     overflow-wrap: break-word;
+
+    h2 {
+      font-size: 1em;
+    }
+    P {
+      color: rgba(0 0 0 / .5);
+    }
+    strong {
+      color: rgb(0 0 0);
+      font-weight: inherit;
+    }
   }
 
   @media (min-width: $column-min-width) {
@@ -132,8 +143,4 @@ header {
       align-self: stretch;
     }
   }
-}
-
-h2 {
-  font-size: 1em;
 }

@@ -56,7 +56,12 @@
       {{/if}}
       <div class="gif-card__info">
         <h2>{{gif.title}}</h2>
-        <p class="gif-id">{{gif.id}}</p>
+        <p>posted <strong>{{moment-from-now gif.import_datetime}}</strong></p>
+        {{#if gif.user.username}}
+          <p>by <strong>{{gif.user.username}}</strong></p>
+        {{/if}}
+        <p>rated <strong>{{uppercase gif.rating}}</strong></p>
+
       </div>
     </a>
   </article>
