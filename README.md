@@ -23,7 +23,7 @@ Alternatively, you can add the key via dotenv. Create a file named `.env` in the
 
     GIPHY_KEY=<api-key>
 
-(Replace `<api-key` with your key, and don't include the `<>`.)
+(Replace `<api-key>` with your key, and don't include the `<>`.)
   
 ## Running / Development
 
