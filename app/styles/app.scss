@@ -16,6 +16,7 @@ header {
   flex-flow: row wrap;
   justify-items: stretch;
   align-items: center;
+  gap: .5em 1em;
 
   padding: .5em 1em;
   background: rgb(255 255 255 / .9);
@@ -27,6 +28,49 @@ header {
 
   font-size: 1em;
   font-weight: 800;
+}
+
+.settings {
+  display: flex;
+  flex-flow: row wrap;
+  gap: .5em 1em;
+}
+
+.radio-toggle {
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-flow: row wrap;
+
+  border-radius: 10px;
+  border: 1px solid rgb(0 0 0 / .15);
+  background: rgb(255 255 255 / .5);
+  color: rgb(0 0 0 / .5);
+  font-weight: 600;
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  label {
+    display: block;
+    padding: .3em 1em;
+    border-radius: 10px;
+    font-size: .9em;
+    line-height: 1.5;
+
+    .material-icons {
+      font-size: 1.2em;
+      line-height: 1.25;
+      vertical-align: top;
+    }
+  }
+
+  input[type="radio"]:checked + label {
+    background: rgb(66 164 254 / .15);
+    color: rgb(66 164 254);
+  }
 }
 
 .gif-grid {

@@ -2,12 +2,12 @@
 <header>
   <h1 class="page-title">Some Cool GIFs</h1>
   <div class="settings">
-    <Input
-      id="animate-checkbox"
-      @type="checkbox"
-      @checked={{this.animate}}
-    />
-    <label for="animate-checkbox">Play animations?</label>
+    <fieldset class="radio-toggle">
+      <input type="radio" id="animate-pause" name="animate" value="false" checked={{if this.animate false true}} {{on "click" this.toggleAnimate}}>
+      <label for="animate-pause"><span class="material-icons">pause</span></label>
+      <input type="radio" id="animate-play" name="animate" value="true" checked={{this.animate}} {{on "click" this.toggleAnimate}}>
+      <label for="animate-play"><span class="material-icons">play_arrow</span></label>
+    </fieldset>
   </div>
 </header>
 
