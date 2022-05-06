@@ -1,7 +1,6 @@
 # giphy-trending
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This Ember app displays the top 50 trending GIFs from GIPHY. It was designed with a nod to the [Hypercontext.com](https://hypercontext.com/) design philosophy for... some reason.
 
 ## Prerequisites
 
@@ -18,6 +17,14 @@ You will need the following things properly installed on your computer.
 * `cd giphy-trending`
 * `npm install`
 
+Add your GIPHY API key to the GIPHY_KEY environment variable before running the app. If you don't have a key, you can sign up for a free account at [GIPHY](https://developers.giphy.com/docs/api/#quick-start-guide) to obtain one.
+
+Alternatively, you can add the key via dotenv. Create a file named `.env` in the `giphy-trending` directory with the following contents:
+
+    GIPHY_KEY=<api-key>
+
+(Replace `<api-key` with your key, and don't include the `<>`.)
+  
 ## Running / Development
 
 * `ember serve`
@@ -42,10 +49,6 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 * `ember build` (development)
 * `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
 
 ## Further Reading / Useful Links
 
